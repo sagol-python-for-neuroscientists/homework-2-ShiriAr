@@ -1,11 +1,7 @@
 # Homework Assignment #2
 
-### Date: 16-03-2020
-### Due date: 30-3-2020, 15:00
-
-This exercise's purpose is to help you familiarize yourself with some parts of the rich Python standard library. The two questions below can be solved
-quite simply with existing functions that do (almost) exactly what I'm asking for, give or take some effort by you :)
-
+### Date: 03-03-2023
+### Due date: 17-03-2023, 15:00
 
 ## Question 1: Morse Code Interpreter
 
@@ -57,11 +53,9 @@ def english_to_morse(
 
 ## Question 2: Spreading Virus
 
-Pairs of people ("agents") are continuously meeting and possibly spreading a virus
-they're carrying, and your job is to model the way their virus spreads.
-You're given a list of agents that are about to meet in pairs, i.e. agent #1 will meet
-agent #2, agent 3# with agent #4, etc. Write a program that returns the status of these
-agents after each pair had their meeting.
+Pairs of people ("agents") are continuously meeting and possibly spreading a virus they're carrying, and your job is to model the way the virus spreads.
+You're given a list of agents that are about to meet in pairs, i.e., agent #1 will meet agent #2, agent #3 with agent #4, etc. 
+Write a program that returns the status of these agents after each pair had their meeting.
 The rules that govern this encounter are quite simple: Each agent has a name and a "category",
 and the categories are:
 1. Cure - a special agent that makes other agents feel better.
