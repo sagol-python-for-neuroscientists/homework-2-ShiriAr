@@ -1,7 +1,7 @@
 """ Tests for question 1 - Morse code translator """
 from pathlib import Path
 
-OUTPUT_FILE_NAME = "lorem_morse.txt"  # output fileOUTPUT_FILE_NAME, please don't change
+OUTPUT_FILE_NAME = "lorem_morse.txt"
 OUTPUT_PATH = Path(__file__).parent / OUTPUT_FILE_NAME
 
 
@@ -31,10 +31,11 @@ if __name__ == "__main__":
     for method in methods:
         try:
             eval(method)()
-        except Exception as e:
+        except AssertionError as e:
             errors.append(f"Failed when testing method 'test_{method}': {e}")
+            break
 
     if errors:
-        print(errors)
+        raise AssertionError(errors)
     else:
         print("Tests pass successfully.")

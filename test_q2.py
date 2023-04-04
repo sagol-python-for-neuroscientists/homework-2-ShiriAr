@@ -107,10 +107,10 @@ if __name__ == "__main__":
     for method in methods:
         try:
             eval(method)()
-        except Exception as e:
+        except AssertionError as e:
             errors.append(f"Failed when testing method 'test_{method}': {e}")
 
     if errors:
-        print(errors)
+        raise AssertionError(errors)
     else:
         print("Tests pass successfully.")
