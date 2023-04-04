@@ -1,27 +1,27 @@
 """ Tests for question 1 - Morse code translator """
-name = 'lorem_morse.txt'  # output filename, please don't change
+from pathlib import Path
+
+OUTPUT_FILE_NAME = "lorem_morse.txt"  # output fileOUTPUT_FILE_NAME, please don't change
+OUTPUT_PATH = Path(__file__).parent / OUTPUT_FILE_NAME
 
 
 def test_file_exists():
-    with open(name) as f:
-        f.read()
-    assert True
+    assert OUTPUT_PATH.exists()
 
 
 def test_file_valid():
-    with open(name) as f:
-        data = f.read()
-    assert data.count('-') == 2748
-    assert data.count('.') == 4175
-    assert data.count('\n') == 453
+    data = Path(OUTPUT_FILE_NAME).read_text()
+    assert data.count("-") == 2748
+    assert data.count(".") == 4175
+    assert data.count("\n") == 453
 
 
 def test_individual_lines():
-    with open(name) as f:
+    with open(OUTPUT_FILE_NAME) as f:
         data = f.readlines()
     assert len(data) == 454
-    assert data[-1] == '.-....--.-.-..-....-.-.-'
-    assert data[3].startswith('.....-')
+    assert data[-1] == ".-....--.-.-..-....-.-.-"
+    assert data[3].startswith(".....-")
 
 
 if __name__ == "__main__":
@@ -33,7 +33,8 @@ if __name__ == "__main__":
             eval(method)()
         except Exception as e:
             errors.append(f"Failed when testing method 'test_{method}': {e}")
-    if len(errors) > 0:
+
+    if errors:
         print(errors)
     else:
         print("Tests pass successfully.")
