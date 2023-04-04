@@ -86,7 +86,7 @@ from enum import Enum
 from collections import namedtuple
 
 
-Type = Enum("Type", ("CURE", "HEALTHY", "SICK", "DYING", "DEAD"))
+Condition = Enum("Condition", ("CURE", "HEALTHY", "SICK", "DYING", "DEAD"))
 Agent = namedtuple("Agent", ("name", "category"))
 ```
 
@@ -115,15 +115,12 @@ def meetup(agent_listing: tuple) -> list:
     Parameters
     ----------
     agent_listing : tuple of Agent
-        A listing (tuple in this case) in which each element is of the Agent
-        type, containing a 'name' field and a 'category' field, with 'category' being
-        of the type Type.
+        A listing (tuple in this case) in which each element is of the Agent type, containing a 'name' field and a 'category' field, with 'category' being of the type Condition.
 
     Returns
     -------
     updated_listing : list
-        A list of Agents with their 'category' field changed according to the result
-        of the meeting.
+        A list of Agents with their 'category' field changed according to the result of the meeting.
     """
 ```
 
