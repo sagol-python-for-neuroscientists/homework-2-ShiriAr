@@ -42,18 +42,7 @@ def english_to_morse(input_file: str = "lorem.txt",output_file: str = "lorem_mor
         output.write(sep_lines)
 
 
-#path = "/Users/shiriarnon/Documents/TAU/Courses/Year_1_(23-24)/Semester_2/Python_for_neuroscience/course_site_2024/assignments/assignment2/lorem.txt"
-#ouput_path = "/Users/shiriarnon/Documents/TAU/Courses/Year_1_(23-24)/Semester_2/Python_for_neuroscience/course_site_2024/assignments/assignment2/lorem_morse.txt"
-
-#english_to_morse(path, ouput_path)
-#english_to_morse()
-
 
 if __name__ == '__main__':
-        # Question 1
-        # param1 = val1
-        # param2 = val2
-        # return_value = function_for_question1(param1, param2)
-        # print(f"Question 1 solution: {return_value}")
         english_to_morse()
    
