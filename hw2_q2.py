@@ -101,8 +101,13 @@ def meetup(agent_list):
     modified_agents = []
     for agent_tuple in batched:
         modified_agents.append(modify_agents(check_category(agent_tuple)))
-    modified_agents = modified_agents + saved + uneven_agents
+    modified_agents_list = [agent for agent in modified_agents if agent is not None]
+    agents_list = list(itertools.chain.from_iterable(agent if isinstance(agent, tuple) else (agent) for agent in modified_agents_list))
+    print(agents_list)
+    modified_agents = agents_list + saved + uneven_agents
     all_agents = [agent for agent in modified_agents if agent is not None]
+    #all_agents_list = list(itertools.chain.from_iterable(agent if isinstance(agent, tuple) else (agent) for agent in all_agents))
+    #all_agents_list = list(itertools.chain.from_iterable(agent if isinstance(agent, tuple) else [] for agent in all_agents))
     return all_agents
 
 
@@ -126,6 +131,4 @@ if __name__ == '__main__':
         
         data0_agents = meetup(data0)
         print(f"Question 2 solution: {data0_agents}")
-
-
 
